@@ -1,0 +1,37 @@
+﻿@using TokyoFashion.Models;
+@model List<TinTuc>
+<!-- Start blog section -->
+<section class="blog__section section--padding pt-0">
+    <div class="container-fluid">
+        <div class="section__heading text-center mb-40">
+            <h2 class="section__heading--maintitle">Tin Tức Nổi Bật</h2>
+        </div>
+        <div class="blog__section--inner blog__swiper--activation swiper">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model)
+                {
+                <div class="swiper-slide">
+                    <div class="blog__items">
+                        <div class="blog__thumbnail">
+                            <a class="blog__thumbnail--link" href="@Url.Action("Tintuc","TrangChu")"><img class="blog__thumbnail--img" src="@Url.Content("~/assets/img/blog/" + @item.Anh)" alt="blog-img"></a>
+                        </div>
+                        <div class="blog__content">
+                            <span class="blog__content--meta">February 05, 2022</span>
+                            <h3 class="blog__content--title">
+                                <a href="blog-details.html">
+                                    @item.TieuDe
+                                </a>
+                            </h3>
+                            <a class="blog__content--btn primary__btn" href="@Url.Action("Tintuc","TrangChu")">Read more </a>
+                        </div>
+                    </div>
+                </div>
+                }
+            
+            </div>
+            <div class="swiper__nav--btn swiper-button-next"></div>
+            <div class="swiper__nav--btn swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+<!-- End blog section -->

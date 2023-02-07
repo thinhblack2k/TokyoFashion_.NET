@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutBE.cshtml";
+}
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <h4 class="m-t-5">
+                        <i class="fa fa-home"></i>
+                        Home
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        <img src="~/Areas/assets/img/sliderbackend.jpg" alt="background" style="width:100%;height: 250px;object-fit: cover;">
+    </div>
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-7 col-12">
+                    <div class="row">
+                        <div class="col-sm-6 col-12">
+                            <div class="bg-primary top_cards">
+                                <div class="row icon_margin_left">
+                                    <div class="col-lg-5 col-5 icon_padd_left">
+                                        <div class="float-left">
+                                            <span class="fa-stack fa-sm">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-shopping-cart fa-stack-1x fa-inverse text-primary sales_hover"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-7 icon_padd_right">
+                                        <div class=" cards_content">
+                                            <span class="number_val">20 </span>
+                                            <br />
+                                            <span class="card_description">Sales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="bg-success top_cards">
+                                <div class="row icon_margin_left">
+                                    <div class="col-lg-5  col-5 icon_padd_left">
+                                        <div class="float-left">
+                                            <span class="fa-stack fa-sm">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-eye fa-stack-1x fa-inverse text-success visit_icon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-7 icon_padd_right">
+                                        <div class=" cards_content">
+                                            <span class="number_val">20 </span>
+                                            <br />
+                                            <span class="card_description">Visitors</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="bg-warning top_cards">
+                                <div class="row icon_margin_left">
+                                    <div class="col-lg-5 col-5 icon_padd_left">
+                                        <div class="float-left">
+                                            <span class="fa-stack fa-sm">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-usd fa-stack-1x fa-inverse text-warning revenue_icon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-7 icon_padd_right">
+                                        <div class=" cards_content">
+                                            <span class="number_val">20</span>
+                                            <br />
+                                            <span class="card_description">Revenue</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="bg-mint top_cards">
+                                <div class="row icon_margin_left">
+                                    <div class="col-lg-5 col-5 icon_padd_left">
+                                        <div class="float-left">
+                                            <span class="fa-stack fa-sm">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-users  fa-stack-1x fa-inverse text-mint sub"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-7 icon_padd_right">
+                                        <div class="cards_content">
+                                            <span class="number_val">20</span>
+                                            <br />
+                                            <span class="card_description">Subscribers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-12 stat_align">
+                    <div class="card weather_section md_align_section">
+                        <div class="card-body">
+                            <div class="row margin_align">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="icon sun-shower">
+                                                <div class="cloud"></div>
+                                                <div class="sun">
+                                                    <div class="rays"></div>
+                                                </div>
+                                                <div class="rain"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="weather-value">
+                                                <span class=" text-white">
+                                                    <span class="degree">25&deg;</span>
+                                                </span>
+                                            </div>
+                                            <div class="weather_location">
+                                                <span class="text-white"><i class="fa fa-map-marker"></i> VietNam</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row weekly_report">
+                                        <div class="col-3">
+                                            <span>Mon</span>
+                                            <br />
+                                            <img src="~/Areas/assets/img/w1.png" alt="weather">
+                                            <p>27&deg;</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <span>Tue</span>
+                                            <br />
+                                            <img src="~/Areas/assets/img/w2.png" alt="weather">
+                                            <p>23&deg;</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <span>Wed</span>
+                                            <br />
+                                            <img src="~/Areas/assets/img/w3.png" alt="weather">
+                                            <p>19&deg;</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <span>Thu</span>
+                                            <br />
+                                            <img src="~/Areas/assets/img/w4.png" alt="weather">
+                                            <p>38&deg;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="search_modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="float-right" aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="input-group search_bar_small">
+                        <input type="text" class="form-control" placeholder="Search..." name="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

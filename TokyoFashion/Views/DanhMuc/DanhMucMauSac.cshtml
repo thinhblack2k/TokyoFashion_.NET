@@ -1,0 +1,18 @@
+﻿@using TokyoFashion.Models;
+@model List<MauSac>
+<div class="single__widget widget__bg">
+    <h2 class="widget__title h3">Màu Sắc</h2>
+    <ul class="widget__form--check">
+        @foreach (var item in Model)
+        {
+            <li class="widget__form--check__list">
+                <a href="#">
+                    <label class="widget__form--check__label" for="check1">@item.TenMau</label>
+                    <input class="widget__form--check__input" id="check1" type="checkbox">
+                    <span class="widget__form--checkmark"></span>
+                </a>
+            </li>
+
+        }
+        </ul>
+</div>

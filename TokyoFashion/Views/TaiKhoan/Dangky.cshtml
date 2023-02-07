@@ -1,0 +1,86 @@
+﻿@model TokyoFashion.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Start breadcrumb section -->
+<section class="breadcrumb__section breadcrumb__bg">
+    <div class="container">
+        <div class="row row-cols-1">
+            <div class="col">
+                <div class="breadcrumb__content text-center">
+                    <h1 class="breadcrumb__content--title text-white mb-25">Đăng Ký</h1>
+                    <ul class="breadcrumb__content--menu d-flex justify-content-center">
+                        <li class="breadcrumb__content--menu__items"><a class="text-white" href="#">TrangChu</a></li>
+                        <li class="breadcrumb__content--menu__items"><span class="text-white">Đăng ký</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End breadcrumb section -->
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="login__section--inner" style=" margin-top: 50px; margin-bottom: 50px; ">
+        <div class="">
+            <div class="col" style="width:50%; margin: 0 auto; text-align: center;">
+                <div class="account__login register">
+                    <div class="account__login--header mb-25">
+                        <h2 class="account__login--header__title h3 mb-10">Create an Account</h2>
+                        <p class="account__login--header__desc">Register here if you are a new customer</p>
+                    </div>
+                    <div class="account__login--inner">
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.TenTaiKhoan, new { htmlAttributes = new { @class = "account__login--input", @placeholder = "User Name" } })
+                            @Html.ValidationMessageFor(model => model.TenTaiKhoan, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "account__login--input", @placeholder = "Password", stype = "password" } })
+                            @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "account__login--input", @placeholder = "Full name" } })
+                            @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "account__login--input", @placeholder = "Email", @stype = "email" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <input type="submit" value="Submit & Register" class="account__login--btn primary__btn mb-10" id="aMuaHang" />
+
+                        <div class="account__login--remember position__relative">
+                            <input class="checkout__checkbox--input" id="check2" type="checkbox">
+                            <span class="checkout__checkbox--checkmark"></span>
+                            <label class="checkout__checkbox--label login__remember--label" for="check2">
+                                I have read and agree to the terms & conditions
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#aMuaHang').click(function (event) {
+            event.preventDefault();
+            var button = this;
+            swal("Đã thêm vào giỏ hàng", "Kiểm tra sản phẩm tại giỏ hàng!", "success");
+            window.setTimeout(function (form) {
+                $(form).submit();
+            }, 1500, $(button).closest('form'));
+        });
+    });
+
+</script>

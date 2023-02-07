@@ -1,0 +1,15 @@
+﻿@using TokyoFashion.Models;
+@model List<DanhMucSP>
+
+
+<li class="offcanvas__menu_li">
+    <a class="offcanvas__menu_item" href="@Url.Action("SanPhamCuaHang", "DanhMuc")">Cửa Hàng</a>
+    <ul class="offcanvas__sub_menu">
+        @foreach (var item in Model)
+        {
+            <li class="header__sub--menu__items" style="margin-top: 12px;"><a href="@Url.Action("SPTheoDanhMuc" , "DanhMuc" , new {@MaDanhMuc=item.MaDanhMuc})">@item.TenDanhMuc</a></li>
+        }
+
+    </ul>
+</li>
+

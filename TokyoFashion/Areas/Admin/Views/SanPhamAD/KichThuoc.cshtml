@@ -1,0 +1,115 @@
+﻿@model PagedList.IPagedList<TokyoFashion.Models.KichThuoc>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "KichThuoc";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutBE.cshtml";
+}
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-md-4 col-sm-4">
+                    <h4 class="nav_top_align">
+                        <i class="fa fa-th"></i>
+                        Danh Mục
+                    </h4>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-8">
+                    <ol class="breadcrumb float-right nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i> Admin
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Sản Phẩm</a>
+                        </li>
+                        <li class="breadcrumb-item active">Kích Thức</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="row">
+                <div class="col-12 data_tables">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <i class="fa fa-table"></i> Danh Sách Kích Thức
+                        </div>
+
+                        <div class="card-body m-t-35">
+                            <a style="float: right; margin-bottom: 10px;" href="#"><button type="button" class="btn btn-primary">Thêm Kích Thước</button></a>
+                            <table id="example1" class="display table table-stripped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Kích Thức</th>
+                                        <th>Tên Kích Thức</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MaKT)
+                                            </td>
+                                            <td class="text-center">
+                                                @Html.DisplayFor(modelItem => item.TenKT)
+                                            </td>
+                                            <td style="color:red;" class="text-center">
+                                                @Html.ActionLink("Sửa", "SuaDanhMuc", new { @MaSP = item.MaKT })
+                                            </td>
+
+                                            <td style="color:red;" class="text-center">@Html.ActionLink("Xóa", "XoaSanPham", new { @MaSP = item.MaKT })</td>
+
+                                        </tr>
+                                    }
+                                    <!-- Pagination -->
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="w3-center w3-padding-32">
+                            <div class="w3-bar mr-5 ml-5" style="margin-right: 10px">
+                                @Html.PagedListPager(Model, page => Url.Action("MauSac", new { page = page }))
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="search_modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="float-right" aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="input-group search_bar_small">
+                        <input type="text" class="form-control" placeholder="Search..." name="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

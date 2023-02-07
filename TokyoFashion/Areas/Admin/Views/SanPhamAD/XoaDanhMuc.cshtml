@@ -1,0 +1,115 @@
+﻿@model TokyoFashion.Models.DanhMucSP
+@{
+    ViewBag.Title = "Xóa Danh Mục";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutBE.cshtml";
+}
+
+<style>
+    .btn-r a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .btn-right {
+        float: right;
+    }
+</style>
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-md-4 col-sm-4">
+                    <h4 class="nav_top_align">
+                        <i class="fa fa-th"></i>
+                        Danh Mục
+                    </h4>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-8">
+                    <ol class="breadcrumb float-right nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i> Admin
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Danh Muc</a>
+                        </li>
+                        <li class="breadcrumb-item active">Danh Sách Danh Muc</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="row">
+                <div class="col-12 data_tables">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <i class="fa fa-table"></i> Xóa Danh Mục
+                        </div>
+
+                        <table class="table">
+                            
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.TenDanhMuc)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(model => model.TenDanhMuc)
+                                </td>
+                            </tr>
+
+                            
+
+                        </table>
+
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <table class="btn-right">
+                                <tr>
+                                    <td>
+                                        <div class="col-md-offset-2 col-md-1">
+                                            <input type="submit" value="Delete" class="btn btn-primary" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="btn btn-primary button-right">@Html.ActionLink("Huỷ", "DanhMucSP")</div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-actions no-color">
+
+                            </div>
+                        }
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="search_modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="float-right" aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="input-group search_bar_small">
+                        <input type="text" class="form-control" placeholder="Search..." name="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
